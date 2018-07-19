@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6pZ-W3-ldX">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -13,13 +13,49 @@
         <!--Profile-->
         <scene sceneID="2Px-tx-ora">
             <objects>
-                <viewController id="6Fj-Uq-Yd6" sceneMemberID="viewController">
+                <viewController title="Profile" id="6Fj-Uq-Yd6" customClass="ProfileViewController" customModule="Selfigram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zaw-EN-2MH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="iub-0v-emn">
+                                <rect key="frame" x="117" y="110" width="180" height="185"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="D2C-Ga-XAi"/>
+                                    <constraint firstAttribute="height" constant="185" id="w5k-9G-PuD"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DKU-XD-4Lm">
+                                <rect key="frame" x="117" y="303" width="54" height="30"/>
+                                <state key="normal" title="Camera"/>
+                                <connections>
+                                    <action selector="cameraButtonPressed:" destination="6Fj-Uq-Yd6" eventType="touchUpInside" id="3ky-LL-Dwx"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wF-gs-zkf">
+                                <rect key="frame" x="167.66666666666666" y="359" width="79" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.91880569170000004" green="0.93138064220000005" blue="0.94143891329999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iub-0v-emn" firstAttribute="centerX" secondItem="zaw-EN-2MH" secondAttribute="centerX" id="707-0V-b9i"/>
+                            <constraint firstItem="iub-0v-emn" firstAttribute="centerX" secondItem="zaw-EN-2MH" secondAttribute="centerX" id="72N-11-FSb"/>
+                            <constraint firstItem="2wF-gs-zkf" firstAttribute="centerX" secondItem="zaw-EN-2MH" secondAttribute="centerX" id="Ijb-hr-tRb"/>
+                            <constraint firstItem="2wF-gs-zkf" firstAttribute="top" secondItem="iub-0v-emn" secondAttribute="bottom" constant="64" id="OyO-5y-m6x"/>
+                            <constraint firstItem="iub-0v-emn" firstAttribute="top" secondItem="Rpd-SL-tpK" secondAttribute="top" constant="46" id="a2j-vg-ZCm"/>
+                            <constraint firstItem="DKU-XD-4Lm" firstAttribute="top" secondItem="iub-0v-emn" secondAttribute="bottom" constant="8" id="iOE-gt-XwW"/>
+                            <constraint firstItem="iub-0v-emn" firstAttribute="leading" secondItem="DKU-XD-4Lm" secondAttribute="trailing" constant="-54" id="ur1-b5-gl1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Rpd-SL-tpK"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="o5l-0s-4WM"/>
+                    <connections>
+                        <outlet property="profileImageView" destination="iub-0v-emn" id="nNf-kf-HAt"/>
+                        <outlet property="usernameLabel" destination="2wF-gs-zkf" id="8XK-F6-Q9l"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8pX-eZ-7EW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -33,7 +69,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" red="0.84535394780011508" green="1" blue="0.93500944399133512" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
                                 <color key="value" red="0.63049665178571423" green="0.54810267857142858" blue="0.98789062500000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -50,21 +85,21 @@
             </objects>
             <point key="canvasLocation" x="-215" y="-785"/>
         </scene>
-        <!--Table View Controller-->
+        <!--News Feed-->
         <scene sceneID="xR3-49-aof">
             <objects>
-                <tableViewController id="4St-5Y-hEG" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="gFv-6u-kvg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <tableViewController title="News Feed" id="4St-5Y-hEG" customClass="FeedTableViewController" customModule="Selfigram" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="gFv-6u-kvg" customClass="FeedViewController">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="sectionIndexBackgroundColor" red="1" green="0.041539604549999998" blue="0.041767055409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Home" id="0P8-x1-P2v">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" id="0P8-x1-P2v">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0P8-x1-P2v" id="rlD-Mb-wN5">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -80,21 +115,21 @@
             </objects>
             <point key="canvasLocation" x="2612" y="-1762.6686656671666"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Activities-->
         <scene sceneID="wAj-Sb-tD5">
             <objects>
-                <tableViewController id="Ufy-pd-NSk" sceneMemberID="viewController">
+                <tableViewController title="Activities" id="Ufy-pd-NSk" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="JDn-zY-OfC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="sectionIndexBackgroundColor" red="0.7438616071428571" green="0.9549386160714286" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Feed" id="6uJ-Uw-Syz">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6uJ-Uw-Syz" id="jv2-cv-KM2">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -110,16 +145,16 @@
             </objects>
             <point key="canvasLocation" x="2612" y="-786.65667166416802"/>
         </scene>
-        <!--Home-->
+        <!--Navigation Controller-->
         <scene sceneID="3KY-4V-rNN">
             <objects>
-                <navigationController title="Home" automaticallyAdjustsScrollViewInsets="NO" id="kci-LV-jW5" sceneMemberID="viewController">
+                <navigationController title="Navigation Controller" automaticallyAdjustsScrollViewInsets="NO" id="kci-LV-jW5" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="News Feed" image="NewsFeed" id="sde-en-vAK"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dIq-oU-v0a">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="1" green="0.94813254717345519" blue="0.72828501815438629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.95790001678860415" green="1" blue="0.787193229940651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -130,16 +165,16 @@
             </objects>
             <point key="canvasLocation" x="1672.8" y="-1762.6686656671666"/>
         </scene>
-        <!--Portfolio-->
+        <!--Navigation Controller-->
         <scene sceneID="oKU-oD-h6S">
             <objects>
-                <navigationController title="Portfolio" automaticallyAdjustsScrollViewInsets="NO" id="gQj-ki-HHu" sceneMemberID="viewController">
+                <navigationController title="Navigation Controller" automaticallyAdjustsScrollViewInsets="NO" id="gQj-ki-HHu" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Ativities" image="Activities" id="9hg-IH-vKb"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XV3-Oz-9LW">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="1" green="0.73674614893256885" blue="0.9106384713196789" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.84535394779999995" green="1" blue="0.93500944399999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -150,16 +185,16 @@
             </objects>
             <point key="canvasLocation" x="1672.8" y="-786.65667166416802"/>
         </scene>
-        <!--Prompts-->
+        <!--Navigation Controller-->
         <scene sceneID="Eil-jZ-co8">
             <objects>
-                <navigationController title="Prompts" automaticallyAdjustsScrollViewInsets="NO" id="k3b-B6-WF8" sceneMemberID="viewController">
+                <navigationController title="Navigation Controller" automaticallyAdjustsScrollViewInsets="NO" id="k3b-B6-WF8" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="Profile" id="AhY-s7-cR2"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="E8G-FU-qnQ">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.73503124497344197" green="1" blue="0.73977882924878113" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.84597253226109537" green="0.99835690419253587" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -175,5 +210,6 @@
         <image name="Activities" width="25" height="25"/>
         <image name="NewsFeed" width="25" height="25"/>
         <image name="Profile" width="25" height="25"/>
+        <image name="placeholder" width="256" height="256"/>
     </resources>
 </document>

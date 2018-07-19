@@ -21,5 +21,11 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func segmentAction(_ sender: UISegmentedControl) {
+    }
+    
+    @IBAction func buttonAction(_ sender: Any) {
+    }
+    
 }
 
