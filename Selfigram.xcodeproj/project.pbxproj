@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		084D5BCD20FD56FD006D275A /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084D5BCC20FD56FD006D275A /* FeedTableViewController.swift */; };
+		0857EA442100335900182C51 /* SelfieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0857EA432100335900182C51 /* SelfieCell.swift */; };
 		085C4E3D20F70B9C00A47C12 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085C4E3C20F70B9C00A47C12 /* User.swift */; };
 		085C4E3F20F70BDC00A47C12 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085C4E3E20F70BDC00A47C12 /* Post.swift */; };
 		085C50A820F451D80060B5B2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085C50A720F451D80060B5B2 /* ProfileViewController.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		084D5BCC20FD56FD006D275A /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
+		0857EA432100335900182C51 /* SelfieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieCell.swift; sourceTree = "<group>"; };
 		085C4E3C20F70B9C00A47C12 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		085C4E3E20F70BDC00A47C12 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		085C50A720F451D80060B5B2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				085C4E3E20F70BDC00A47C12 /* Post.swift */,
 				084D5BCC20FD56FD006D275A /* FeedTableViewController.swift */,
 				0875198A20EDB55B004E19A9 /* Main.storyboard */,
+				0857EA432100335900182C51 /* SelfieCell.swift */,
 				085C50A720F451D80060B5B2 /* ProfileViewController.swift */,
 				0875198D20EDB55E004E19A9 /* Assets.xcassets */,
 				0875198F20EDB55E004E19A9 /* LaunchScreen.storyboard */,
@@ -270,6 +273,7 @@
 			files = (
 				085C4E3D20F70B9C00A47C12 /* User.swift in Sources */,
 				084D5BCD20FD56FD006D275A /* FeedTableViewController.swift in Sources */,
+				0857EA442100335900182C51 /* SelfieCell.swift in Sources */,
 				085C50A820F451D80060B5B2 /* ProfileViewController.swift in Sources */,
 				0875198920EDB55B004E19A9 /* ViewController.swift in Sources */,
 				0875198720EDB55B004E19A9 /* AppDelegate.swift in Sources */,
