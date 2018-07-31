@@ -6,6 +6,8 @@
 //  Copyright © 2018 Vincent Lewis. All rights reserved.
 //
 
+import Parse
+
 import UIKit
 
 class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -41,16 +43,56 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let user = PFUser.current() {
+            usernameLabel.text = user.username
+            
+            if let imageFile = user["avatarImage"] as? PFFile {
+                
+                imageFile.getDataInBackground(block: { (data, error) -> Void in
+                    if let imageData = data {
+                        self.profileImageView.image = UIImage(data: imageData)
+                        
+                    }
+                })
+            }
+        }
+    }
+    
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {profileImageView.image = image
+        // 1. When the delegate method is returned, it passes along a dictionary called info.
+        //    This dictionary contains multiple things that may be useful to us.
+        //    We are getting the image from the UIImagePickerControllerOriginalImage key in that dictionary
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             
+            // setting the compression quality to 90%
+            if let imageData = UIImageJPEGRepresentation(image, 0.9),
+                let imageFile = PFFile(data: imageData),
+                let user = PFUser.current(){
+                
+                user["avatarImage"] = imageFile
+                user.saveInBackground(block: { (success, error) -> Void in
+                    if success {
+                        // set our profileImageView to be the image we have picked
+                        let image = UIImage(data: imageData)
+                        self.profileImageView.image = image
+                    }
+                })
+                
+            }
             
         }
         
+        //3. We remember to dismiss the Image Picker from our screen.
         dismiss(animated: true, completion: nil)
         
     }
+    
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
