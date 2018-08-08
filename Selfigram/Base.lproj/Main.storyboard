@@ -122,21 +122,42 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hub-zl-ZaV">
+                                            <rect key="frame" x="360" y="258" width="42" height="37"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="37" id="4gs-xs-nzL"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="23" id="KG9-Cb-TJ0"/>
+                                                <constraint firstAttribute="width" constant="42" id="WFZ-Ys-x38"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="xfT-Wh-Mgc"/>
+                                            </constraints>
+                                            <state key="normal" backgroundImage="hearts-off"/>
+                                            <state key="selected" image="hearts-on"/>
+                                            <connections>
+                                                <action selector="favoriteButtonClicked:" destination="0P8-x1-P2v" eventType="touchUpInside" id="KX8-gm-ZkM"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="hub-zl-ZaV" firstAttribute="trailing" secondItem="rlD-Mb-wN5" secondAttribute="trailingMargin" constant="8" id="0kV-lr-H89"/>
+                                        <constraint firstItem="hub-zl-ZaV" firstAttribute="top" secondItem="U11-mY-9GD" secondAttribute="bottom" constant="8" id="18Y-bD-O4t"/>
                                         <constraint firstItem="uyj-Le-C2H" firstAttribute="top" secondItem="U11-mY-9GD" secondAttribute="bottom" constant="8" id="5t0-Ik-pCT"/>
                                         <constraint firstItem="U11-mY-9GD" firstAttribute="top" secondItem="rlD-Mb-wN5" secondAttribute="top" id="BKb-sX-jQp"/>
                                         <constraint firstItem="U11-mY-9GD" firstAttribute="leading" secondItem="rlD-Mb-wN5" secondAttribute="leading" id="BVZ-NI-3mn"/>
                                         <constraint firstItem="246-pt-jOd" firstAttribute="leading" secondItem="rlD-Mb-wN5" secondAttribute="leadingMargin" id="EZY-Um-GAn"/>
+                                        <constraint firstItem="hub-zl-ZaV" firstAttribute="top" secondItem="U11-mY-9GD" secondAttribute="bottom" constant="8" id="O12-FF-cLR"/>
                                         <constraint firstItem="uyj-Le-C2H" firstAttribute="leading" secondItem="rlD-Mb-wN5" secondAttribute="leadingMargin" id="R15-HR-gff"/>
                                         <constraint firstItem="246-pt-jOd" firstAttribute="top" secondItem="uyj-Le-C2H" secondAttribute="bottom" constant="8" id="TJW-ZR-xKf"/>
+                                        <constraint firstAttribute="trailing" secondItem="hub-zl-ZaV" secondAttribute="trailing" constant="12" id="Xwn-T2-D41"/>
                                         <constraint firstAttribute="trailing" secondItem="U11-mY-9GD" secondAttribute="trailing" id="dg9-iF-GAW"/>
+                                        <constraint firstItem="hub-zl-ZaV" firstAttribute="top" secondItem="U11-mY-9GD" secondAttribute="bottom" constant="8" id="f6J-Qk-6am"/>
+                                        <constraint firstAttribute="trailing" secondItem="hub-zl-ZaV" secondAttribute="trailing" constant="12" id="jHe-Ku-Dg1"/>
                                         <constraint firstItem="246-pt-jOd" firstAttribute="leading" secondItem="rlD-Mb-wN5" secondAttribute="leadingMargin" id="ooP-EV-G4l"/>
                                         <constraint firstItem="uyj-Le-C2H" firstAttribute="leading" secondItem="rlD-Mb-wN5" secondAttribute="leadingMargin" id="z5A-gM-PLJ"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="commentLabel" destination="246-pt-jOd" id="4ly-1B-gDI"/>
+                                    <outlet property="didClickLikeButton" destination="hub-zl-ZaV" id="6OV-qJ-K6s"/>
                                     <outlet property="selfieImageView" destination="U11-mY-9GD" id="H2V-cO-qbg"/>
                                     <outlet property="usernameLabel" destination="uyj-Le-C2H" id="q11-3o-6UZ"/>
                                 </connections>
@@ -254,6 +275,8 @@
         <image name="Activities" width="25" height="25"/>
         <image name="NewsFeed" width="25" height="25"/>
         <image name="Profile" width="25" height="25"/>
+        <image name="hearts-off" width="42" height="37"/>
+        <image name="hearts-on" width="42" height="37"/>
         <image name="placeholder" width="256" height="256"/>
     </resources>
 </document>
